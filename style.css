@@ -51,7 +51,8 @@ button {
 .todo-header {
 	height: 200px;
 	border-radius: 1rem 1rem 0 0;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('./images/material.JPG');
+	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+		url('../Project-1_To_Do_List/images/material.jpg');
 	background-size: cover;
 	background-position: center;
 	display: flex;
