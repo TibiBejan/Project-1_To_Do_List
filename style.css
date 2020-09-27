@@ -1,0 +1,283 @@
+:root {
+	--gradient: linear-gradient(to bottom right, #30cfd0 0%, #330867 100%);
+	--shadow: 0.5rem 0.5rem 0.7rem rgba(0, 0, 0, 0.5);
+	--text-color: #000;
+	--white: #fff;
+	--primary-color: #33136d;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 400;
+}
+
+body {
+	min-height: 100vh;
+	width: 100%;
+	padding: 5rem 0;
+	background-image: var(--gradient);
+	color: var(--text-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+button {
+	outline: none;
+	border: none;
+	cursor: pointer;
+	background-color: transparent;
+	font-size: 2rem;
+}
+
+.container {
+	width: 90vw;
+	max-width: 500px;
+	min-height: 700px;
+	background-color: var(--white);
+	border-radius: 1rem;
+	box-shadow: var(--shadow);
+}
+
+.todo-header {
+	height: 200px;
+	border-radius: 1rem 1rem 0 0;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/images/material.jpg');
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.clear-button {
+	display: inline-block;
+	align-self: flex-end;
+	margin: 0.7rem;
+	width: 3rem;
+	height: 3rem;
+	color: var(--white);
+	filter: drop-shadow(2px 2px 1px #000);
+}
+
+.date-heading {
+	margin: 1rem 0;
+	text-align: center;
+	color: var(--white);
+	text-transform: uppercase;
+	font-size: 1.7rem;
+	text-shadow: 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.5);
+}
+
+#todo-list {
+	min-height: 425px;
+	margin: 1rem 0;
+	list-style: none;
+}
+
+.todo-item {
+	display: flex;
+	align-items: center;
+	padding: 0.5rem 1rem;
+	border-bottom: 0.15rem solid #ccc;
+}
+
+.todo-item:last-child {
+	border-bottom: none;
+}
+
+.check-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2rem;
+	height: 2rem;
+	border: 0.2rem solid var(--primary-color);
+	border-radius: 50%;
+	transition: all 0.5s ease-in-out;
+}
+
+.fa-check {
+	font-size: 1.2rem;
+	color: var(--primary-color);
+	transition: all 0.5s ease-in-out;
+}
+
+.todo-text {
+	margin-left: 1rem;
+	font-size: 1.1rem;
+}
+
+.todo-text.checked {
+	text-decoration: line-through;
+	color: #ccc;
+	transition: all 0.3s linear;
+}
+
+.trash-button {
+	margin-left: auto;
+	cursor: pointer;
+	transition: all 0.3s ease-in;
+}
+
+.trash-button:hover,
+.trash-button:active {
+	color: var(--primary-color);
+}
+
+.add-todo {
+	height: 75px;
+	width: 100%;
+	padding: 0 1rem;
+	display: flex;
+	align-items: center;
+	border-radius: 0 0 1rem 1rem;
+	border-top: 0.15rem solid #ccc;
+}
+
+.add-button {
+	width: 3rem;
+	height: 3.5rem;
+	font-size: 2.5rem;
+	color: var(--primary-color);
+	transition: opacity 0.4s ease-in-out;
+}
+
+.add-button:hover {
+	opacity: 0.85;
+}
+
+.todo-input {
+	min-width: calc(100% - 7rem);
+	padding: 0.7rem 0.5rem;
+	outline: none;
+	border: none;
+	font-size: 1.1rem;
+}
+
+.todo-input:focus {
+	border: 0.15rem solid var(--primary-color);
+	border-radius: 0.5rem;
+}
+
+.todo-input::placeholder {
+	color: var(--primary-color);
+	text-transform: uppercase;
+}
+
+.todo-error {
+	width: 3rem;
+	height: 3rem;
+	margin: 0 0.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	background-color: rgb(255, 8, 0);
+	animation: pulse 1.5s infinite ease-in-out;
+	cursor: pointer;
+	pointer-events: none;
+	user-select: none;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.8);
+		box-shadow: 0 0 0 0.3rem rgba(255, 8, 0, 0.3);
+	}
+	75% {
+		transform: scale(0.9);
+		box-shadow: 0 0 0 0.3rem rgba(255, 8, 0, 0.6);
+	}
+	100% {
+		transform: scale(0.8);
+		box-shadow: 0 0 0 0.3rem rgba(255, 8, 0, 0.3);
+	}
+}
+
+.fa-exclamation {
+	font-size: 1.5rem;
+	color: var(--white);
+}
+
+.hide {
+	display: none;
+}
+
+@media screen and (max-width: 550px) {
+	body {
+		padding: 1rem 0;
+	}
+	.container {
+		width: 95%;
+		min-height: 500px;
+	}
+
+	.date-heading {
+		font-size: 1.5rem;
+	}
+
+	.add-todo {
+		padding: 0 0.5rem;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	body {
+		padding: 1rem 0;
+	}
+	.container {
+		width: 100%;
+		min-height: 500px;
+	}
+
+	.date-heading {
+		font-size: 1.3rem;
+	}
+
+	.clear-button {
+		margin: 1rem;
+		width: 1.5rem;
+		height: 1.5rem;
+		font-size: 1.5rem;
+	}
+
+	.check-button {
+		width: 1.7rem;
+		height: 1.7rem;
+	}
+
+	.trash-button {
+		font-size: 1.5rem;
+	}
+
+	.add-todo {
+		padding: 0 0.5rem;
+	}
+
+	.add-button {
+		width: 2rem;
+		height: 2.5rem;
+		font-size: 2rem;
+	}
+
+	.todo-input {
+		min-width: 70%;
+		margin: 0 0.3rem;
+		font-size: 0.9rem;
+	}
+
+	.todo-error {
+		width: 2.2rem;
+		height: 2.2rem;
+	}
+}

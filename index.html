@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="todo-header">
+            <button type="button" class="clear-button" id="clearBtn">
+                <i class="fas fa-sync-alt"></i>
+            </button>
+            <h1 class="date-heading"></h1>
+        </div>
+        <div class="todo-content">
+            <ul id="todo-list"></ul>
+            <div class="add-todo">
+                <button type="button" class="add-button" id="addBtn">
+                    <i class="fas fa-plus-circle"></i>
+                </button>
+                <input type="text" class="todo-input" placeholder="Add To Do" id="todoInput" autocomplete="off">
+                <div class="todo-error hide">
+                    <i class="fas fa-exclamation"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
